@@ -1,0 +1,40 @@
+# extract_metrics_task:
+#   steps:
+#     - action: >
+#         Extract key metrics from the provided text.
+
+# search_ranges_task:
+#   steps:
+#     - action: >
+#         Search for general ranges of the key metrics.
+#       input: {metrics}
+#       output: {ranges}
+
+# find_abnormalities_task:
+#   inputs:
+#     metrics: dictionary
+#     ranges: dictionary
+#   outputs:
+#     abnormalities: dictionary
+#     recommendations: list
+#   steps:
+#     - action: >
+#         Identify abnormal metrics by comparing with the provided ranges.
+#       input: {metrics, ranges}
+#       output: {abnormalities}
+#     - action: >
+#         Find relevant health recommendations for the detected abnormalities.
+#       input: {abnormalities}
+#       output: {recommendations}
+
+# send_recommendations_task:
+#   inputs:
+#     email: string
+#     recommendations: list
+#   outputs:
+#     status: string
+#   steps:
+#     - action: >
+#         Send the personalized health recommendations and related articles to the user via email.
+#       input: {email, recommendations}
+#       output: {status}
