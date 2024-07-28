@@ -35,8 +35,10 @@ poetry install
 To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
 
 ```bash
-poetry run assesment
+python main.py
 ```
+
+the endpoint is /analysis which takes in form data input of a file and email
 
 This command initializes the assesment Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
